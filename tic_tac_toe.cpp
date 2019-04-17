@@ -18,7 +18,7 @@ void draw()
 void input()
 {
     int first;
-    printf("Which position do you want to mark?");
+    printf("Which position do you want to mark?\n");
     scanf("%d", &first);
     if(first == 1)
     {
@@ -57,10 +57,24 @@ void input()
         matrix[2][2] = player;
     }
 }
-
+void toggleplayer()
+{
+    if(player == 'x')
+    {
+        player = 'o';
+    }
+    else
+        player = 'x';
+}
 int main()
 {
     draw();
+    while(1)
+    {
+        input();
+        draw();
+        toggleplayer();
+    }
     cin.get();
     return 0;
 }
